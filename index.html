@@ -91,6 +91,25 @@
             .sidebar-nav:hover .sidebar-icon {
                 margin-right: 8px;
             }
+
+            .cover-bg {
+                background-image: url("./img/bg.png") !important;
+                background-size: 100% 100%;
+                background-color: rgba(0, 30, 60, 0.3);
+                background-blend-mode: overlay;
+            }
+
+            .title1{
+                color: #ffffff; /* 纯白色文字 */
+                /* 外描边+阴影：彻底和背景区分开 */
+                text-shadow:
+                        0 0 2px #002040,  /* 深蓝色内描边 */
+                        0 2px 6px rgba(0, 0, 0, 0.7); /* 黑色投影增强层次 */
+            }
+
+            .title2 {
+                text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); /* 轻阴影 */
+            }
         }
     </style>
 
@@ -101,78 +120,17 @@
           rel="stylesheet">
 </head>
 <body class="bg-neutral-100 font-sans text-neutral-700">
-<!-- 右侧悬浮导航栏 -->
-<nav class="fixed top-0 right-0 h-full bg-white/90 backdrop-blur-sm shadow-lg z-50 sidebar-nav flex flex-col items-center py-8">
-    <!-- 导航标题 (hover 显示) -->
-    <div class="mb-8 px-4 hidden sidebar-link">
-        <h1 class="text-primary font-heading font-bold text-lg whitespace-nowrap">US Shopping Trends Analysis</h1>
-    </div>
-
-    <!-- 导航链接列表 -->
-    <div class="flex flex-col space-y-4 w-full px-4">
-        <a href="#cover"
-           class="flex items-center text-neutral-500 hover:text-primary transition-colors py-2 px-3 rounded-lg">
-            <i class="fa fa-home text-lg sidebar-icon"></i>
-            <span class="sidebar-link whitespace-nowrap">Cover</span>
-        </a>
-        <a href="#location"
-           class="flex items-center text-neutral-500 hover:text-primary transition-colors py-2 px-3 rounded-lg">
-            <i class="fa fa-map-marker text-lg sidebar-icon"></i>
-            <span class="sidebar-link whitespace-nowrap">Location Trends</span>
-        </a>
-        <a href="#category"
-           class="flex items-center text-neutral-500 hover:text-primary transition-colors py-2 px-3 rounded-lg">
-            <i class="fa fa-tags text-lg sidebar-icon"></i>
-            <span class="sidebar-link whitespace-nowrap">Category Trends</span>
-        </a>
-        <a href="#demographics"
-           class="flex items-center text-neutral-500 hover:text-primary transition-colors py-2 px-3 rounded-lg">
-            <i class="fa fa-users text-lg sidebar-icon"></i>
-            <span class="sidebar-link whitespace-nowrap">Consumer Demographics</span>
-        </a>
-        <a href="#promotions"
-           class="flex items-center text-neutral-500 hover:text-primary transition-colors py-2 px-3 rounded-lg">
-            <i class="fa fa-percent text-lg sidebar-icon"></i>
-            <span class="sidebar-link whitespace-nowrap">Promotions</span>
-        </a>
-        <a href="#ratings"
-           class="flex items-center text-neutral-500 hover:text-primary transition-colors py-2 px-3 rounded-lg">
-            <i class="fa fa-star text-lg sidebar-icon"></i>
-            <span class="sidebar-link whitespace-nowrap">Review Ratings</span>
-        </a>
-        <a href="#shopping-habits"
-           class="flex items-center text-neutral-500 hover:text-primary transition-colors py-2 px-3 rounded-lg">
-            <i class="fa fa-shopping-cart text-lg sidebar-icon"></i>
-            <span class="sidebar-link whitespace-nowrap">Shopping Habits</span>
-        </a>
-        <a href="#outerwear"
-           class="flex items-center text-neutral-500 hover:text-primary transition-colors py-2 px-3 rounded-lg">
-            <i class="fa fa-tshirt text-lg sidebar-icon"></i>
-            <span class="sidebar-link whitespace-nowrap">Outerwear</span>
-        </a>
-        <a href="#recommendations"
-           class="flex items-center text-neutral-500 hover:text-primary transition-colors py-2 px-3 rounded-lg">
-            <i class="fa fa-lightbulb-o text-lg sidebar-icon"></i>
-            <span class="sidebar-link whitespace-nowrap">Recommendations</span>
-        </a>
-    </div>
-
-    <!-- 移动端菜单按钮 (仅小屏幕显示) -->
-    <button class="mt-auto md:hidden text-neutral-600" id="menuToggle">
-        <i class="fa fa-bars text-xl"></i>
-    </button>
-</nav>
 
 <!-- 主内容区域 (增加右侧边距适配悬浮导航) -->
 <main class="pr-20 md:pr-0">
     <!-- 封面页 -->
     <section id="cover"
-             class="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/90 to-primary py-20 px-4 section-fade">
+             class="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/90 to-primary py-20 px-4 section-fade cover-bg">
         <div class="container mx-auto max-w-5xl text-center">
-            <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-heading font-bold text-white mb-6 text-shadow leading-tight">
+            <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-heading font-bold text-white mb-6 text-shadow leading-tight title1">
                 In-depth Insights into US Shopping Trends<br>and Consumer Behavior
             </h1>
-            <p class="text-[clamp(1.1rem,2vw,1.3rem)] text-white/90 mb-10 max-w-3xl mx-auto">
+            <p class="text-[clamp(1.1rem,2vw,1.3rem)] text-white/90 mb-10 max-w-3xl mx-auto title2" >
                 Comprehensive analysis of shopping patterns, consumer demographics, promotional effectiveness, and
                 market opportunities across the United States
             </p>
@@ -199,8 +157,7 @@
                 </h2>
                 <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
                 <p class="text-neutral-500 max-w-3xl mx-auto">
-                    Geographic distribution of shopping activity, regional preferences, and spending patterns across
-                    different states and urban/rural areas
+                    Taking the state as the starting point, explore the geographical distribution, regional preferences and consumption patterns of shopping activities.
                 </p>
             </div>
 
@@ -253,15 +210,17 @@
                     <ul class="grid grid-cols-1 md:grid-cols-3 gap-4 text-neutral-600">
                         <li class="flex items-start">
                             <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Coastal states show 35% higher spending on premium products</span>
+                            <span>The distribution of customers is relatively scattered, and no state shows an absolute concentration of customers, indicating that the business covers a wide area.</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Midwestern states prioritize value and promotional offers</span>
+                            <span>
+                                The proportion of customers younger than 20 years old is relatively low, and the market share of young consumers is insufficient.
+                            </span>
                         </li>
                         <li class="flex items-start">
                             <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Urban areas show 28% more frequent shopping trips than rural areas</span>
+                            <span>The proportion of all types of consumer behavior is average, and there is no special preference.</span>
                         </li>
                     </ul>
                 </div>
@@ -278,8 +237,7 @@
                 </h2>
                 <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
                 <p class="text-neutral-500 max-w-3xl mx-auto">
-                    Analysis of spending patterns across product categories, seasonal variations, and growth
-                    opportunities
+                    Taking the category as the starting point, explore the geographical distribution, regional preferences and consumption patterns of shopping activities.
                 </p>
             </div>
             <!-- 地图可视化 (替换为空白div) -->
@@ -331,15 +289,11 @@
                     <ul class="grid grid-cols-1 md:grid-cols-3 gap-4 text-neutral-600">
                         <li class="flex items-start">
                             <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Coastal states show 35% higher spending on premium products</span>
+                            <span>The core of revenue is Clothing, which is far more than other categories.</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Midwestern states prioritize value and promotional offers</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Urban areas show 28% more frequent shopping trips than rural areas</span>
+                            <span>There is a huge gap between the number of single products sold and the sales volume.</span>
                         </li>
                     </ul>
                 </div>
@@ -356,8 +310,7 @@
                 </h2>
                 <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
                 <p class="text-neutral-500 max-w-3xl mx-auto">
-                    Understanding the demographic composition of our customer base, purchasing power by age group, and
-                    gender-based preferences
+                    Explore the distribution of customers by their gender and age.
                 </p>
             </div>
             <div class='tableauPlaceholder' id='viz1767100351965' style='position: relative'>
@@ -407,15 +360,11 @@
                     <ul class="grid grid-cols-1 md:grid-cols-3 gap-4 text-neutral-600">
                         <li class="flex items-start">
                             <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Coastal states show 35% higher spending on premium products</span>
+                            <span>Men are the core customer group, accounting for nearly twice the proportion of women, indicating that there is obvious gender bias in the business audience</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Midwestern states prioritize value and promotional offers</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Urban areas show 28% more frequent shopping trips than rural areas</span>
+                            <span>The customer group is mainly middle-aged and old, while the young group (15-20 years old) has less coverage, and the age structure is more mature</span>
                         </li>
                     </ul>
                 </div>
@@ -428,12 +377,11 @@
         <div class="container mx-auto max-w-6xl">
             <div class="mb-12 text-center">
                 <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-heading font-bold text-neutral-700 mb-4">
-                    Are Promotional Tactics Really Effective
+                    Are Promotional Tactics Really Effective?
                 </h2>
                 <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
                 <p class="text-neutral-500 max-w-3xl mx-auto">
-                    Evaluation of different promotional strategies, their impact on sales volume, customer acquisition,
-                    and profit margins
+                    Explore the impact of discounts, regular customers, subscriptions, and delivery methods on purchase unit prices.
                 </p>
             </div>
 
@@ -484,15 +432,15 @@
                     <ul class="grid grid-cols-1 md:grid-cols-3 gap-4 text-neutral-600">
                         <li class="flex items-start">
                             <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Coastal states show 35% higher spending on premium products</span>
+                            <span>Discount and subscription status are two kinds of common operation means, but they do not drive the average purchase amount of customers in a single time.</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Midwestern states prioritize value and promotional offers</span>
+                            <span>Regardless of the number of historical purchases (loyalty), there is little difference in the average purchase amount of a single purchase among different customer groups, and the amount dimension of consumption behavior is highly stable.</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Urban areas show 28% more frequent shopping trips than rural areas</span>
+                            <span>The average purchase amount corresponding to various distribution methods is basically the same, and customers' choice of distribution methods is not related to their own consumption amount.</span>
                         </li>
                     </ul>
                 </div>
@@ -505,12 +453,11 @@
         <div class="container mx-auto max-w-6xl">
             <div class="mb-12 text-center">
                 <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-heading font-bold text-neutral-700 mb-4">
-                    What Influenced Our Review Rating
+                    What Influenced Our Review Rating?
                 </h2>
                 <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
                 <p class="text-neutral-500 max-w-3xl mx-auto">
-                    Analysis of customer review ratings, key factors influencing satisfaction scores, and correlation
-                    between ratings and repeat purchases
+                    Explore what factors affect customer evaluations.
                 </p>
             </div>
 
@@ -561,15 +508,15 @@
                     <ul class="grid grid-cols-1 md:grid-cols-3 gap-4 text-neutral-600">
                         <li class="flex items-start">
                             <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Coastal states show 35% higher spending on premium products</span>
+                            <span>No matter the category, gender, delivery method or subscription status, the average score difference is very small, which indicates that users' evaluation of different types of products and service experiences is relatively consistent.</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Midwestern states prioritize value and promotional offers</span>
+                            <span>Different categories and colors have different scores in different seasons. For example, footwear in autumn and gray in winter have the highest rating.</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Urban areas show 28% more frequent shopping trips than rural areas</span>
+                            <span>Although the average score of different items fluctuated slightly, it was still concentrated in the range of 3.6-3.9. There was no extremely low score item, and the overall evaluation was at a stable level above the middle.</span>
                         </li>
                     </ul>
                 </div>
@@ -582,12 +529,11 @@
         <div class="container mx-auto max-w-6xl">
             <div class="mb-12 text-center">
                 <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-heading font-bold text-neutral-700 mb-4">
-                    People Here Love Shopping
+                    People Here Love Shopping!
                 </h2>
                 <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
                 <p class="text-neutral-500 max-w-3xl mx-auto">
-                    Understanding shopping frequency, channel preferences (online vs. offline), peak shopping times, and
-                    basket composition
+                    Explore the number of customers in different regions and the average amount of a single purchase.
                 </p>
             </div>
 
@@ -638,15 +584,11 @@
                     <ul class="grid grid-cols-1 md:grid-cols-3 gap-4 text-neutral-600">
                         <li class="flex items-start">
                             <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Coastal states show 35% higher spending on premium products</span>
+                            <span>There is a large gap in the number of customers in different regions.</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Midwestern states prioritize value and promotional offers</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Urban areas show 28% more frequent shopping trips than rural areas</span>
+                            <span>The average purchase price may not be high in regions with a large number of customers.</span>
                         </li>
                     </ul>
                 </div>
@@ -659,12 +601,11 @@
         <div class="container mx-auto max-w-6xl">
             <div class="mb-12 text-center">
                 <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-heading font-bold text-neutral-700 mb-4">
-                    Do Our Customers Like Our Outerwear
+                    Do Our Customers Like Our Outerwear?
                 </h2>
                 <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
                 <p class="text-neutral-500 max-w-3xl mx-auto">
-                    Deep dive into outerwear category performance, customer satisfaction, style preferences, and
-                    competitive positioning
+                    Explore the sales performance of different categories of products in different seasons.
                 </p>
             </div>
 
@@ -716,15 +657,11 @@
                     <ul class="grid grid-cols-1 md:grid-cols-3 gap-4 text-neutral-600">
                         <li class="flex items-start">
                             <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Coastal states show 35% higher spending on premium products</span>
+                            <span>No matter in summer, winter, spring or autumn, the purchase amount of Clothing is far higher than that of other categories, and it is the main revenue in the whole season.</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Midwestern states prioritize value and promotional offers</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                            <span>Urban areas show 28% more frequent shopping trips than rural areas</span>
+                            <span>The performance of the same category varies significantly in different seasons, reflecting the correlation between season and category demand.</span>
                         </li>
                     </ul>
                 </div>
@@ -737,7 +674,7 @@
         <div class="container mx-auto max-w-6xl">
             <div class="mb-12 text-center">
                 <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-heading font-bold text-neutral-700 mb-4">
-                    What Should We Do Next
+                    What Should We Do Next?
                 </h2>
                 <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
                 <p class="text-neutral-500 max-w-3xl mx-auto">
@@ -756,19 +693,11 @@
                     <ul class="space-y-3 text-neutral-600">
                         <li class="flex items-start">
                             <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
-                            <span>Expand premium outerwear line targeting 35-44 age demographic</span>
+                            <span>Focus on core product category resources: Clothing is the main revenue driver across all seasons, with balanced sales across individual items. Investment in SKU updates and quality optimization for this category can be increased. For weaker categories such as Outerwear, non-core styles can be reduced, and resources can be concentrated on developing best-sellers.</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
-                            <span>Develop sustainable product lines to capitalize on 38% growth trend</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
-                            <span>Improve product descriptions to reduce 3-star reviews by 27%</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
-                            <span>Create bundled offerings based on shopping basket analysis</span>
+                            <span>Supplement products for young customers: Currently, our customers are mainly middle-aged and elderly individuals. We can develop clothing/accessory styles that meet the preferences of the 15-20 year old demographic, filling the gap in the young market.</span>
                         </li>
                     </ul>
                 </div>
@@ -782,19 +711,11 @@
                     <ul class="space-y-3 text-neutral-600">
                         <li class="flex items-start">
                             <i class="fa fa-arrow-right text-secondary mt-1 mr-2"></i>
-                            <span>Targeted promotions (15-20% off) for high-value customer segments</span>
+                            <span>Application scenarios for adjusting discounts: If discounts do not significantly increase the average transaction value, it is recommended to use discounts for "attracting new customers + clearing inventory" rather than increasing the average transaction value.</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fa fa-arrow-right text-secondary mt-1 mr-2"></i>
-                            <span>Regional marketing campaigns tailored to coastal vs. midwestern preferences</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa fa-arrow-right text-secondary mt-1 mr-2"></i>
-                            <span>Seasonal marketing aligning with category demand peaks</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa fa-arrow-right text-secondary mt-1 mr-2"></i>
-                            <span>Focus on mobile shopping experience (68% of users prefer mobile)</span>
+                            <span>Optimizing the value proposition of subscription services: Subscription status does not affect the amount of consumption. Non-monetary benefits such as "exclusive early access to new products, point accumulation" can be included in subscription benefits to enhance the attractiveness of subscriptions.</span>
                         </li>
                     </ul>
                 </div>
@@ -808,19 +729,11 @@
                     <ul class="space-y-3 text-neutral-600">
                         <li class="flex items-start">
                             <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
-                            <span>Optimize delivery process to address 32% of negative reviews</span>
+                            <span>Weak links in stable product evaluation: Although the overall evaluation is balanced, there are still 17.56% of negative reviews. It is recommended to establish an after-sales follow-up mechanism for the links where negative reviews are concentrated (such as logistics timeliness and product quality) to quickly solve problems.</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
-                            <span>Improve customer service response times for higher satisfaction scores</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
-                            <span>Enhance omnichannel experience (online + offline integration)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
-                            <span>Implement loyalty programs for 25-44 age groups (highest spending)</span>
+                            <span>Simplify the decision-making cost of shipping options: Since the shipping method does not affect the total purchase amount, "Free Shipping" can be set as the default option, reducing customers' cost in choosing shipping methods and enhancing the efficiency of placing orders.</span>
                         </li>
                     </ul>
                 </div>
